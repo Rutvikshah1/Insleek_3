@@ -1,0 +1,92 @@
+@font-face {
+  font-family: 'Neue hans kendrick';
+  src: url('../src/assests/NeueHansKendrick-Regular.otf');
+}
+
+:root {
+  //Colors
+  --color-blue: #6c63ff;
+  --color-light-grey: #f6f6f6;
+  --color-grey: #808080;
+  --color-white: #ffffff;
+  --color-black: #000000;
+
+  //Fonts
+  --font-Neue: 'Neue hans kendrick';
+}
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  font-family: var(--font-Neue);
+  font-weight: 400;
+  font-size: 1.6rem;
+  line-height: 1.7;
+  text-transform: capitalize;
+}
+
+input[type='text'],
+input[type='number'],
+input[type='email'],
+input[type='password'],
+textarea,
+select {
+  outline: none;
+}
+
+section {
+  min-height: 100vh;
+}
+
+.custom-file-input::-webkit-file-upload-button {
+  background-color: blanchedalmond;
+  border: 1px solid burlywood;
+  font-family: var(--font-Neue);
+  outline: none;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  outline: none;
+}
+
+//Scrollbar CSS
+/* width */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 2px var(--color-grey);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: var(--color-blue);
+  border-radius: 100px;
+}
+
+//Toast CSS
+.Toastify__toast-body {
+  font-family: var(--font-Neue);
+  letter-spacing: 0.1rem;
+  text-transform: capitalize;
+  margin: auto;
+}

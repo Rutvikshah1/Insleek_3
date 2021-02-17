@@ -1,0 +1,51 @@
+.imagewithtext {
+  display: flex;
+  width: 100%;
+  padding-left: 3rem;
+  margin-bottom: 5rem;
+
+  @media only screen and (max-width: 800px) {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__text {
+    width: 40%;
+    font-family: var(--font-Neue);
+    letter-spacing: 0.1rem;
+    text-transform: capitalize;
+    margin-top: 5rem;
+
+    &--secondary {
+      text-align: justify;
+      margin-top: 2rem;
+    }
+
+    @media only screen and (max-width: 1200px) {
+      width: 100%;
+      margin: 0;
+      padding: 2rem 2rem 2rem 0;
+    }
+
+    @media only screen and (max-width: 690px) {
+      &--primary {
+        line-height: 1.4;
+        font-size: 3rem;
+      }
+    }
+  }
+
+  &__image {
+    width: 50%;
+    background-repeat: no-repeat;
+    margin: 1rem;
+
+    img {
+      box-shadow: 5px 10px 10px rgba(0, 0, 0, 0.6);
+    }
+
+    @media only screen and (max-width: 800px) {
+      margin: 0;
+    }
+  }
+}

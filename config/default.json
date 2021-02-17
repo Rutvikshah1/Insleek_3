@@ -1,0 +1,4 @@
+{
+  "mongoURI": "mongodb+srv://rutvik369:rutvik369@insleek.56wat.mongodb.net/insleek?retryWrites=true&w=majority",
+  "jwtSecret": "mySecretToken"
+}

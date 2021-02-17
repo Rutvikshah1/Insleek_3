@@ -1,0 +1,10 @@
+.form-supplier {
+  margin: 2rem 30%;
+}
+
+@media only screen and (max-width: 690px) {
+  .form-supplier {
+    margin: 1rem;
+    padding: 6rem 0 0 1rem;
+  }
+}

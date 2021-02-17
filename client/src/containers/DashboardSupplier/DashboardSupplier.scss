@@ -1,0 +1,119 @@
+.dashboard-supplier {
+  display: flex;
+
+  nav {
+    width: 15vw;
+    background-color: var(--color-light-grey);
+  }
+
+  &__links {
+    width: 15vw;
+    margin-top: 6rem;
+    align-content: space-between;
+    padding: 1rem;
+    height: 100vh;
+    list-style: none;
+
+    li {
+      margin: 1rem 0;
+      background-color: blanchedalmond;
+      padding: 5px 30px;
+      a {
+        text-decoration: none;
+      }
+    }
+  }
+
+  &__component {
+    width: 100%;
+    min-height: 100vh;
+  }
+}
+
+.menu-btnn {
+  visibility: hidden;
+}
+
+@media only screen and (max-width: 690px) {
+  .dashboard-supplier {
+    nav {
+      position: fixed;
+      overflow: hidden;
+      z-index: 1000;
+      width: 100vw;
+      background-color: black;
+    }
+
+    &__links {
+      margin: 10rem 8rem;
+      width: 55vw;
+
+      li {
+        background-color: var(--color-blue);
+        font-size: 2rem;
+        margin-top: 2rem;
+
+        a {
+          color: white;
+        }
+      }
+    }
+  }
+
+  //HAMBURGER
+  .menu-btnn {
+    background-color: var(--color-blue);
+    visibility: visible;
+    padding: 3rem 1rem;
+    padding-right: 2rem;
+    position: fixed;
+    right: -1rem;
+    top: 0rem;
+    z-index: 18000;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+  }
+  .menu-btnn__burger {
+    width: 30px;
+    height: 5px;
+    background: var(--color-white);
+    border-radius: 5px;
+    transition: all 0.3s ease-in-out;
+  }
+  .menu-btnn__burger::before,
+  .menu-btnn__burger::after {
+    content: '';
+    position: absolute;
+    width: 30px;
+    height: 5px;
+    background: var(--color-white);
+    border-radius: 5px;
+    transition: all 0.3s ease-in-out;
+  }
+  .menu-btnn__burger::before {
+    transform: translateY(-16px);
+  }
+  .menu-btnn__burger::after {
+    transform: translateY(16px);
+  }
+  /* ANIMATION */
+  .menu-btnn.open .menu-btnn__burger {
+    transform: translateX(-50px);
+    background: transparent;
+    box-shadow: none;
+  }
+  .menu-btnn.open .menu-btnn__burger::before {
+    transform: rotate(45deg) translate(35px, -35px);
+  }
+  .menu-btnn.open .menu-btnn__burger::after {
+    transform: rotate(-45deg) translate(35px, 35px);
+  }
+
+  .store-product {
+    width: 32rem;
+  }
+
+  .navVisible {
+    visibility: hidden;
+  }
+}

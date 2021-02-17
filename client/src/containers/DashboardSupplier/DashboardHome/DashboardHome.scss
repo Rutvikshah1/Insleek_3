@@ -1,0 +1,55 @@
+.dashboardhome {
+  display: flex;
+  margin: 3rem;
+  justify-content: space-around;
+
+  &__profile-visit {
+    order: -1;
+    box-shadow: 0px 3px 15px rgba(white, 0.7);
+    padding: 2rem;
+    color: var(--color-white);
+    height: 25rem;
+    background-color: var(--color-blue);
+
+    span {
+      font-size: 10.5rem;
+    }
+  }
+
+  &__profile-link {
+    box-shadow: 0px 3px 15px rgba(#6c63ff, 0.7);
+    padding: 1rem;
+    height: min-content;
+  }
+
+  p {
+    width: 40rem;
+    text-align: justify;
+  }
+}
+
+@media only screen and (max-width: 690px) {
+  .dashboardhome {
+    flex-direction: column;
+    justify-content: flex-start;
+    margin: 2rem;
+
+    p {
+      width: 27rem;
+    }
+
+    & .form-group__textarea {
+      width: 100%;
+    }
+
+    &__profile-visit {
+      padding: 2rem;
+      height: min-content;
+      margin-top: 5rem;
+    }
+
+    &__profile-link {
+      margin-top: 2rem;
+    }
+  }
+}

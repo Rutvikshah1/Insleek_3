@@ -1,0 +1,24 @@
+.userside-block {
+  height: 13rem;
+  padding: 4rem 0 0 2rem;
+  width: 100%;
+  background-color: var(--color-light-grey);
+
+  &__noinfo {
+    display: grid;
+    justify-content: center;
+  }
+
+  &__title {
+    padding: 2rem 0;
+    font-size: 3rem;
+  }
+}
+
+@media only screen and (max-width: 690px) {
+  .userside-block {
+    &__noinfo {
+      padding: 2rem;
+    }
+  }
+}

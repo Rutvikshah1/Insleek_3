@@ -1,0 +1,10 @@
+.addProduct {
+  margin: 3rem 30%;
+}
+
+@media only screen and (max-width: 690px) {
+  .addProduct {
+    margin: 2rem;
+    padding-top: 4rem;
+  }
+}

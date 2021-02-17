@@ -1,0 +1,20 @@
+.__button {
+  text-decoration: none;
+  display: inline-block;
+  margin: 2rem 0;
+  min-width: 14rem;
+  padding: 1.4rem;
+  color: white;
+  background-color: var(--color-blue);
+  border-radius: 100px;
+  outline: none;
+  cursor: pointer;
+  font-family: var(--font-Neue);
+  letter-spacing: 0.3px;
+  box-shadow: 5px 10px 10px rgba(0, 0, 0, 0.4);
+}
+
+.__square {
+  border-radius: 0;
+  border: none;
+}

@@ -1,0 +1,9 @@
+.payment-info {
+  margin: 2rem 30%;
+}
+
+@media only screen and (max-width: 690px) {
+  .payment-info {
+    margin: 2rem 4%;
+  }
+}

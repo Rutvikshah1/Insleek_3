@@ -1,0 +1,18 @@
+.logo {
+  position: absolute;
+  left: 2rem;
+  z-index: 10000;
+
+  &__name-white {
+    color: white;
+  }
+
+  &__name-black {
+    color: black;
+  }
+
+  @media only screen and (max-width: 52rem) {
+    top: 0.5rem;
+    left: 2rem;
+  }
+}

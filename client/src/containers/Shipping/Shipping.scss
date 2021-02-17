@@ -1,0 +1,9 @@
+.shipping-form {
+  margin: 2rem 33%;
+}
+
+@media only screen and (max-width: 690px) {
+  .shipping-form {
+    margin: 2rem 5%;
+  }
+}

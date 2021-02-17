@@ -1,0 +1,42 @@
+.threefeatures {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 3rem;
+
+  .feature {
+    width: 26%;
+    font-family: var(--font-Neue);
+    letter-spacing: 0.1rem;
+    text-transform: capitalize;
+
+    &__text {
+      text-align: justify;
+    }
+
+    &__icon {
+      height: 7rem;
+      margin: 0 35%;
+      width: 7rem;
+    }
+
+    &__title {
+      margin: 1rem 0;
+    }
+  }
+}
+
+@media only screen and (max-width: 690px) {
+  .threefeatures {
+    flex-direction: column;
+
+    .feature {
+      width: 100%;
+      padding: 3rem;
+
+      &__title {
+        margin: 0;
+        text-align: center;
+      }
+    }
+  }
+}

@@ -1,0 +1,15 @@
+.payment-checkbox {
+  margin: 0 40%;
+  padding-top: 5rem;
+
+  label {
+    font-size: 2rem;
+    padding-left: 1rem;
+  }
+}
+
+@media only screen and (max-width: 690px) {
+  .payment-checkbox {
+    margin: 0 22%;
+  }
+}

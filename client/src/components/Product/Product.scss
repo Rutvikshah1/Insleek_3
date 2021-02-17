@@ -1,0 +1,158 @@
+.product {
+  display: flex;
+  align-content: center;
+  justify-content: space-around;
+  padding: 13rem 0 0 0;
+  flex-grow: 0;
+
+  &__image {
+    height: 40rem;
+    width: 40rem;
+  }
+
+  &__part-two {
+    width: 50%;
+  }
+
+  &__part-two {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.product-description {
+  text-align: justify;
+  max-width: 100%;
+}
+
+.no-reviews {
+  text-align: center;
+}
+
+.write-review {
+  margin: 0 30%;
+}
+
+.rating {
+  h1 {
+    text-align: center;
+    font-size: 3rem;
+    margin-top: 7%;
+  }
+
+  &__average {
+    text-align: center;
+    font-size: 3rem;
+  }
+}
+
+.visit-store {
+  position: absolute;
+  top: 1rem;
+  padding: 1rem;
+  right: 2rem;
+}
+
+.review-card {
+  width: 40%;
+  box-shadow: 0px 3px 15px rgba(#6c63ff, 0.7);
+  margin: 1rem auto;
+  padding: 2rem;
+}
+
+.login-for-review {
+  text-align: center;
+  font-size: 2rem;
+}
+
+@media only screen and (max-width: 690px) {
+  .visit-store {
+    position: fixed;
+    top: 88vh;
+    right: 3rem;
+  }
+
+  .product {
+    display: flex;
+    flex-direction: column;
+
+    &__image {
+      height: 35rem;
+      width: 35rem;
+    }
+
+    &__part-two {
+      width: 100%;
+      display: flex;
+      padding: 2rem;
+      flex-direction: column;
+    }
+  }
+
+  .search-product-box__review {
+    padding: 0;
+  }
+  .write-review {
+    margin: 0 6%;
+  }
+
+  .review-card {
+    width: 94%;
+    margin: 1rem;
+  }
+}
+
+//CART ALERT
+.cart-alert-background {
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  width: 100vw;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.cart-alert-box {
+  height: 20rem;
+  width: 50rem;
+  background-color: white;
+  margin: 20rem auto;
+
+  h3 {
+    text-align: center;
+    padding: 3rem;
+    font-size: 2rem;
+  }
+
+  button {
+    text-transform: capitalize;
+    margin: 0 3rem;
+  }
+}
+
+@media only screen and (max-width: 690px) {
+  .product {
+    padding-top: 6rem;
+    &__image {
+      height: 40rem;
+      width: 100%;
+    }
+  }
+  .cart-alert-box {
+    width: 35rem;
+
+    &__buttons {
+      display: flex;
+    }
+
+    h3 {
+      padding: 1rem;
+    }
+
+    button {
+      text-transform: capitalize;
+      margin: 1rem;
+    }
+  }
+}

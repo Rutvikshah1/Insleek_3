@@ -1,0 +1,33 @@
+.userside-product {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  width: 35%;
+  margin: 0 auto;
+  box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.3);
+
+  &__removeitem {
+    color: red;
+    cursor: pointer;
+  }
+
+  &__dropdown {
+    font-family: var(--font-Neue);
+    padding: 15px;
+    font-weight: 1rem;
+    width: 100%;
+    font-size: 1rem;
+    border-radius: 5px;
+    border: 2px solid var(--color-blue);
+  }
+}
+
+@media only screen and (max-width: 690px) {
+  .shipping-button {
+    margin-left: 16px;
+  }
+
+  .userside-product {
+    width: 90%;
+  }
+}
