@@ -11,6 +11,14 @@
     padding: 3rem;
   }
 
+  .pricing-nav-link {
+    position: absolute;
+    right: 2rem;
+    font-size: 2rem;
+    color: var(--color-blue);
+    top: 1rem;
+  }
+
   &__text {
     width: 50%;
     margin-top: 10rem;

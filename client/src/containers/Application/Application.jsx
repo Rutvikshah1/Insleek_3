@@ -30,6 +30,7 @@ import PrivacyPolicy from '../Policies/PrivacyPolicy';
 import RefundPolicy from '../Policies/RefundPolicy';
 import TermsConditions from '../Policies/TermsConditions';
 import PageNotFound from '../PageNotFound/PageNotFound';
+import Pricing from '../Pricing/Pricing';
 
 // const ProductScreen = lazy(() => import('../../components/Product/Product'));
 
@@ -43,6 +44,7 @@ const Application = () => {
           <Switch>
             <Route exact path="/" component={LandingUser} />
             <Route exact path="/suppliers" component={LandingSupplier} />
+            <Route exact path="/pricing" component={Pricing} />
             <Route exact path="/search-result" component={SearchResultBox} />
             <Route exact path="/login" component={Login} />
             <Route exact path="/supplier/:id" component={OpenProfile} />

@@ -1,0 +1,33 @@
+.pricing-container {
+  background-color: var(--color-blue);
+  position: absolute;
+  top: 6rem;
+  width: 100%;
+  height: 100vh;
+}
+
+.pricing-card {
+  height: 55vh;
+  background: var(--color-white);
+  margin: 9rem auto;
+  width: 30rem;
+  box-shadow: 0px 3px 15px rgba(#000, 0.7);
+  position: relative;
+
+  &__premium {
+    position: absolute;
+    background-color: var(--color-blue);
+    right: 0;
+    top: 1rem;
+    color: var(--color-white);
+    padding: 0.5rem;
+  }
+
+  h1 {
+    color: var(--color-blue);
+  }
+
+  &__feature-list {
+    padding: 7rem 3rem;
+  }
+}

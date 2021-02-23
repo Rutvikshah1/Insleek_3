@@ -6,7 +6,7 @@ import store from '../../assests/svg/029-open.svg';
 import money from '../../assests/svg/041-money.svg';
 import bag from '../../assests/svg/008-bag.svg';
 import deliveries from '../../assests/svg/deliveries.svg';
-import { Redirect } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { loadSupplier } from '../../actions/authSupplier';
 import './LandingSupplier.scss';
@@ -51,6 +51,9 @@ const LandingSupplier = () => {
   return (
     <div>
       <header className="header">
+        <Link to="/pricing" className="pricing-nav-link">
+          Pricing
+        </Link>
         <div className="header__text">
           <h1 className="header__text--primary" data-aos="fade-up">
             Sell directly to India's Largest Dropshipping Platform
