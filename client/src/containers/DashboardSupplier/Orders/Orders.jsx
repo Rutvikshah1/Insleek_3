@@ -33,7 +33,7 @@ const Orders = () => {
     <React.Fragment>
       <div className="no-orders">
         {order.supplierOrders.length === 0 &&
-          'No New Orders, come after some time!!'}
+          'No Orders, Please check after some time'}
         {loading ? (
           <h2>
             <Spinner />
@@ -59,8 +59,7 @@ const Orders = () => {
                 <strong>Delivery Address</strong>
                 <br />
                 {item.shippingAddress.address}, {item.shippingAddress.city},{' '}
-                {item.shippingAddress.postalCode},{' '}
-                {item.shippingAddress.country}
+                {item.shippingAddress.postalCode}, {item.shippingAddress.state}
               </p>
               <br />
               <h2>Ordered Items</h2>

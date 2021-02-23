@@ -7,7 +7,7 @@ import {
   supplierReadMessage,
   sendMessage,
 } from '../../../actions/chat';
-import audioTone from './../../../assests/juntos-607.mp3';
+import audioTone from './../../../assests/audio/juntos-607.mp3';
 
 const Messages = () => {
   const dispatch = useDispatch();
@@ -55,6 +55,7 @@ const Messages = () => {
         supplierHasRead
       )
     );
+
     document.getElementById('msg').value = '';
   };
 
@@ -65,8 +66,8 @@ const Messages = () => {
 
   return (
     <>
-      <div class="chat-container">
-        <header class="chat-header">
+      <div className="chat-container">
+        <header className="chat-header">
           <h1>Insleek Chatboard</h1>
           <p
             onClick={() => {
@@ -76,16 +77,17 @@ const Messages = () => {
             Back
           </p>
         </header>
-        <main class="chat-main">
-          <div class="chat-sidebar">
+        <main className="chat-main">
+          <div className="chat-sidebar">
             <h3>Chat with Users</h3>
             <ul id="users">
-              {users.map((user) => {
+              {users.map((user, index) => {
                 const numOfUnread = user.message.filter(function (el) {
                   return el.supplierHasRead === false;
                 });
                 return (
                   <li
+                    key={index}
                     className={`chat-sidebar__user ${
                       Object.keys(singalChat).length !== 0 &&
                       singalChat.user._id === user.user._id &&
@@ -118,21 +120,22 @@ const Messages = () => {
               })}
             </ul>
           </div>
-          <div class="chat-messages">
+          <div className="chat-messages">
             {Object.keys(singalChat).length === 0 && (
               <p className="no-message-text">
                 Please select any chat to start sending messages
               </p>
             )}
             {Object.keys(singalChat).length !== 0 &&
-              singalChat.message.map((msg) => {
+              singalChat.message.map((msg, index) => {
                 return (
                   <div
+                    key={index}
                     className={`message ${
                       msg.side === 'supplier' ? 'message-you' : ''
                     }`}
                   >
-                    <p class="meta">
+                    <p className="meta">
                       {msg.side === 'supplier'
                         ? 'You'
                         : `${singalChat.user.firstName} ${singalChat.user.lastName}`}
@@ -142,27 +145,28 @@ const Messages = () => {
                       </span>
                     </p>
 
-                    <p class="text">{msg.message}</p>
+                    <p className="text">{msg.message}</p>
                   </div>
                 );
               })}
           </div>
         </main>
-        <div class="chat-form-container">
-          <form id="chat-form" onSubmit={(e) => onSubmit(e)}>
+        <div className="chat-form-container">
+          <form onSubmit={(e) => onSubmit(e)} id="msgForm">
             <input
               id="msg"
+              name="msg"
               type="text"
               placeholder="Enter Message"
               required
-              autocomplete="off"
+              autoComplete="off"
               disabled={Object.keys(singalChat).length === 0}
               onChange={(e) => {
                 setMessageText(e.target.value);
               }}
             />
             <button className="btn">
-              <i class="fas fa-paper-plane"></i> Send
+              <i className="fas fa-paper-plane"></i> Send
             </button>
           </form>
         </div>

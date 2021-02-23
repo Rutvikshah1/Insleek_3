@@ -1,5 +1,5 @@
 import React from 'react';
-import noPage from './../../assests/noPage.svg';
+import noPage from './../../assests/svg/noPage.svg';
 import './PageNotFound.scss';
 
 const PageNotFound = () => {

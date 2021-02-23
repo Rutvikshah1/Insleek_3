@@ -1,18 +1,14 @@
 import React from 'react';
 
 import Button from '../Button/Button';
+import yousell from '../../assests/images/yousell.jpg';
 import './ImageWithText.scss';
 
-const ImageWithText = ({ mainimage, subimage }) => {
+const ImageWithText = () => {
   return (
     <div className="imagewithtext" data-aos="fade-up">
       <div className="imagewithtext__image">
-        <img
-          src={mainimage}
-          srcSet={`${subimage} 300w, ${mainimage} 600w`}
-          sizes="(max-width: 1200px) 300px, 600px"
-          alt="img"
-        />
+        <img src={yousell} alt="you_sell" />
       </div>
       <div className="imagewithtext__text">
         <h1 className="imagewithtext__text--primary">

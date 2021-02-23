@@ -106,7 +106,11 @@ const Login = ({ history }) => {
           </div>
 
           <button type="submit" className="__button __square">
-            {loadingButton ? <i class="fa fa-spinner fa-spin"></i> : 'LOGIN'}
+            {loadingButton ? (
+              <i className="fa fa-spinner fa-spin"></i>
+            ) : (
+              'LOGIN'
+            )}
           </button>
           <div>
             New to Insleek ?<Link to="/supplier-register"> Register</Link> Here

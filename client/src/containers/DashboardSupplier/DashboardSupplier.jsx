@@ -77,7 +77,7 @@ const DashboardSupplier = () => {
   return (
     <BrowserRouter>
       <div
-        class="menu-btnn"
+        className="menu-btnn"
         onClick={() => {
           toggleHamburger();
           if (showNavbar) {
@@ -87,7 +87,7 @@ const DashboardSupplier = () => {
           }
         }}
       >
-        <div class="menu-btnn__burger"></div>
+        <div className="menu-btnn__burger"></div>
       </div>
 
       <div className="dashboard-supplier">
@@ -144,9 +144,9 @@ const DashboardSupplier = () => {
         </nav>
 
         <Switch>
-          {routes.map((route) => (
+          {routes.map((route, index) => (
             <PrivateRoute
-              key={route.path}
+              key={index}
               path={route.path}
               exact={route.exact}
               children={<route.sidebar />}
@@ -159,9 +159,9 @@ const DashboardSupplier = () => {
         ) : (
           <div className="dashboard-supplier__component">
             <Switch>
-              {routes.map((route) => (
+              {routes.map((route, index) => (
                 <PrivateRoute
-                  key={route.path}
+                  key={index}
                   path={route.path}
                   exact={route.exact}
                   children={route.main}

@@ -268,16 +268,16 @@ const RegisterSupplier = ({ history }) => {
             <span>
               You must follow the below norms to become our supplier. <br />{' '}
               <br />
-              <i class="fas fa-check-circle"></i> You should have the real
+              <i className="fas fa-check-circle"></i> You should have the real
               stocks of the products you upload in your store.
               <br />
-              <i class="fas fa-check-circle"></i> Your price should be very
+              <i className="fas fa-check-circle"></i> Your price should be very
               economical as we usually allow our resellers to sell at higher
               profits.
-              <br /> <i class="fas fa-check-circle"></i> In the courier you
+              <br /> <i className="fas fa-check-circle"></i> In the courier you
               send, you should include only the invoice we send you and paste
               the shipping labels we send you.
-              <br /> <i class="fas fa-check-circle"></i> You shall include a
+              <br /> <i className="fas fa-check-circle"></i> You shall include a
               nominal courier charge costs in the product itself as we encourage
               our resellers to do free shipping to their end-customers.
             </span>
@@ -367,7 +367,7 @@ const RegisterSupplier = ({ history }) => {
               error="required"
               rows="6"
               cols="50"
-              maxLength="100"
+              maxLength="300"
               name="aboutCompany"
               value={aboutCompany}
               onChange={(e) => onChange(e)}
@@ -403,8 +403,8 @@ const RegisterSupplier = ({ history }) => {
               onChange={(e) => onChange(e)}
             >
               <option value="">SELECT</option>
-              {states.map((x) => (
-                <option key={x} value={x}>
+              {states.map((x, index) => (
+                <option key={index} value={x}>
                   {x}
                 </option>
               ))}
@@ -440,8 +440,8 @@ const RegisterSupplier = ({ history }) => {
               onChange={(e) => onChange(e)}
             >
               <option value="">SELECT</option>
-              {niches.map((x) => (
-                <option key={x} value={x}>
+              {niches.map((x, index) => (
+                <option key={index} value={x}>
                   {x}
                 </option>
               ))}
@@ -518,7 +518,11 @@ const RegisterSupplier = ({ history }) => {
             />
           </div>
           <button type="submit" className="__square __button">
-            {loadingButton ? <i class="fa fa-spinner fa-spin"></i> : 'SIGN UP'}
+            {loadingButton ? (
+              <i className="fa fa-spinner fa-spin"></i>
+            ) : (
+              'SIGN UP'
+            )}
           </button>
           <div>
             Have an account ?<Link to="/login"> Login</Link> Here.

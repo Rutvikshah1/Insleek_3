@@ -44,7 +44,14 @@ const UserOrders = ({ match }) => {
                   <div className="order-status-tag">{item.orderStatus}</div>
                   <strong>ORDER ID </strong>
                   <br />
-                  {item._id}
+                  <span
+                    className="view-order"
+                    onClick={() => {
+                      window.open(`/order/${item._id}`);
+                    }}
+                  >
+                    {item._id}
+                  </span>
                   <br />
                   {moment(item.createdAt).format('MMMM Do YYYY, h:mm a')}
                 </div>
@@ -60,7 +67,7 @@ const UserOrders = ({ match }) => {
                   <br />
                   {item.shippingAddress.address}, {item.shippingAddress.city},{' '}
                   {item.shippingAddress.postalCode},{' '}
-                  {item.shippingAddress.country}
+                  {item.shippingAddress.state}
                 </p>
                 <br />
 

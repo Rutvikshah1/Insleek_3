@@ -52,9 +52,9 @@ const Cart = ({ match, history, location }) => {
         </div>
 
         <React.Fragment>
-          {cartItems.map((item) => {
+          {cartItems.map((item, index) => {
             return [
-              <div className="userside-product" data-aos="fade-up">
+              <div className="userside-product" data-aos="fade-up" key={index}>
                 <img
                   src={`/uploads/${item.image}`}
                   height="55px"

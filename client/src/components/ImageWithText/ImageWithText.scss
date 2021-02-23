@@ -4,9 +4,19 @@
   padding-left: 3rem;
   margin-bottom: 5rem;
 
+  img {
+    height: 60vh;
+    width: 45vw;
+  }
+
   @media only screen and (max-width: 800px) {
     display: flex;
     flex-direction: column;
+
+    img {
+      height: 40vh;
+      width: 85vw;
+    }
   }
 
   &__text {

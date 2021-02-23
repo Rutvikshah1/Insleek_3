@@ -13,6 +13,11 @@
   }
 }
 
+.view-order {
+  cursor: pointer;
+  color: var(--color-blue);
+}
+
 @media only screen and (max-width: 690px) {
   .userorders {
     &__box {

@@ -199,6 +199,7 @@ const EditProfile = () => {
             value={firstName}
             onChange={(e) => onChange(e)}
           />
+          <br />
           <small className="form-group__error">
             {!firstName && 'Required Field'}
           </small>
@@ -215,6 +216,7 @@ const EditProfile = () => {
             value={lastName}
             onChange={(e) => onChange(e)}
           />
+          <br />
           <small className="form-group__error">
             {!lastName && 'Required Field'}
           </small>
@@ -232,6 +234,7 @@ const EditProfile = () => {
             value={aboutCompany}
             onChange={(e) => onChange(e)}
           ></textarea>
+          <br />
           <small className="form-group__error">
             {!aboutCompany && 'Required Field'}
           </small>
@@ -244,8 +247,8 @@ const EditProfile = () => {
           className="form-group__dropdown"
           onChange={(e) => onChange(e)}
         >
-          {states.map((x) => (
-            <option key={x} value={x}>
+          {states.map((x, index) => (
+            <option key={index} value={x}>
               {x}
             </option>
           ))}
@@ -262,6 +265,7 @@ const EditProfile = () => {
             value={city}
             onChange={(e) => onChange(e)}
           />
+          <br />
           <small className="form-group__error">
             {!city && 'Required Field'}
           </small>
@@ -275,15 +279,12 @@ const EditProfile = () => {
             value={niche}
             onChange={(e) => onChange(e)}
           >
-            {niches.map((x) => (
-              <option key={x} value={x}>
+            {niches.map((x, index) => (
+              <option key={index} value={x}>
                 {x}
               </option>
             ))}
           </select>
-          <small className="form-group__error">
-            {!city && 'Required Field'}
-          </small>
         </div>
 
         <div className="form-group">
@@ -310,10 +311,11 @@ const EditProfile = () => {
             error="required"
             type="text"
             name="companyName"
-            maxlength="20"
+            maxLength="20"
             value={companyName}
             onChange={(e) => onChange(e)}
           />
+          <br />
           <small className="form-group__error">
             {!companyName && 'Required Field'}
           </small>
@@ -395,7 +397,7 @@ const EditProfile = () => {
         </div>
 
         <button type="submit" className="__square __button">
-          {loadingButton ? <i class="fa fa-spinner fa-spin"></i> : 'UPDATE'}
+          {loadingButton ? <i className="fa fa-spinner fa-spin"></i> : 'UPDATE'}
         </button>
       </form>
     </Fragment>

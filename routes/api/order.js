@@ -76,7 +76,6 @@ router.post('/', async (req, res) => {
 // @route    GET api/order/:id
 // @desc     Get Order By ID
 // @access   Private
-
 router.get('/:id', async (req, res) => {
   try {
     const order = await Order.findById(req.params.id).populate(
@@ -128,6 +127,9 @@ router.get('/supplier/:id', async (req, res) => {
   }
 });
 
+// @route    POST api/order/update-product-status/:id
+// @desc     update product status in order
+// @access   Private
 router.post('/update-product-status/:id', async (req, res) => {
   const value = req.body.value;
 

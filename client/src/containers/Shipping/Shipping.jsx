@@ -17,7 +17,7 @@ const Shipping = ({ history }) => {
   const [address, setAddress] = useState(shippingAddress.address);
   const [city, setCity] = useState(shippingAddress.city);
   const [postalCode, setPostalCode] = useState(shippingAddress.postalCode);
-  const [country, setCountry] = useState(shippingAddress.country);
+  const [state, setState] = useState(shippingAddress.state);
 
   const submitHandler = (e) => {
     e.preventDefault();
@@ -26,7 +26,7 @@ const Shipping = ({ history }) => {
         address,
         city,
         postalCode,
-        country,
+        state,
         custName,
         custPhone,
       })
@@ -112,15 +112,15 @@ const Shipping = ({ history }) => {
           </div>
 
           <div className="form-group">
-            <h4 className="form-group__title">Enter your country</h4>
+            <h4 className="form-group__title">Enter your state</h4>
             <input
               className="form-group__text"
-              placeholder="Enter Your Country"
+              placeholder="Enter Your state"
               type="text"
-              name="country"
+              name="state"
               required
-              value={country}
-              onChange={(e) => setCountry(e.target.value)}
+              value={state}
+              onChange={(e) => setState(e.target.value)}
             />
           </div>
 

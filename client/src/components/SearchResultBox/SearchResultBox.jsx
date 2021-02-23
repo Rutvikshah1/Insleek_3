@@ -38,7 +38,7 @@ const SearchResultBox = (props) => {
               <b>{props.supplier.companyName}</b>
             </div>
             <div>
-              <i class="fas fa-map-marker-alt"></i> {props.supplier.city},{' '}
+              <i className="fas fa-map-marker-alt"></i> {props.supplier.city},{' '}
               {props.supplier.state}
             </div>
           </div>
@@ -52,7 +52,7 @@ const SearchResultBox = (props) => {
 
             <div className="displaybox__part-two--right">
               <div>
-                <i class="fas fa-check-circle"></i>{' '}
+                <i className="fas fa-check-circle"></i>{' '}
                 {
                   supplierTagOne[
                     Math.floor(Math.random() * supplierTagOne.length)
@@ -60,7 +60,7 @@ const SearchResultBox = (props) => {
                 }
               </div>
               <div>
-                <i class="fas fa-check-circle"></i>{' '}
+                <i className="fas fa-check-circle"></i>{' '}
                 {
                   supplierTagTwo[
                     Math.floor(Math.random() * supplierTagTwo.length)
@@ -81,7 +81,7 @@ const SearchResultBox = (props) => {
               }
             }}
           >
-            <i class="far fa-heart"></i>
+            <i className="far fa-heart"></i>
           </Link>
         </div>
       </div>

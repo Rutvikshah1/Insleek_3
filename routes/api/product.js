@@ -57,7 +57,6 @@ router.post(
 // @route    GET api/product/item/:id
 // @desc     Get Product By ID
 // @access   Public
-
 router.get('/item/:id', async (req, res) => {
   try {
     const product = await Product.findById(req.params.id);
@@ -74,7 +73,6 @@ router.get('/item/:id', async (req, res) => {
 // @route    GET api/product/list
 // @desc     Get All Products By Supplier ID
 // @access   Public
-
 router.get('/:slug', async (req, res) => {
   try {
     const products = await Product.find({ supplier: req.params.slug });
@@ -94,7 +92,6 @@ router.get('/:slug', async (req, res) => {
 // @route    GET api/product/:keyword
 // @desc     Get All Products By Search
 // @access   Public
-
 router.get('/products/:keyword', async (req, res) => {
   const keyword = req.params.keyword
     ? {
@@ -120,7 +117,6 @@ router.get('/products/:keyword', async (req, res) => {
 // @route    DELETE api/product/delete/:id
 // @desc     Delete Product By Product ID
 // @access   Private
-
 router.delete('/delete/:id', async (req, res) => {
   try {
     const product = await Product.findById(req.params.id);
@@ -159,7 +155,6 @@ router.delete('/delete/:id', async (req, res) => {
 // @route    DELETE api/product/delete-all/:id
 // @desc     Delete All Product By Supplier ID
 // @access   Private
-
 router.delete('/delete-all/:id', auth, async (req, res) => {
   try {
     const products = await Product.findOne({ supplier: req.params.id });
@@ -177,6 +172,9 @@ router.delete('/delete-all/:id', auth, async (req, res) => {
   }
 });
 
+// @route    POST api/product/:id/reviews
+// @desc     Write review
+// @access   Private
 router.post('/:id/reviews', async (req, res) => {
   const { rating, comment, user } = req.body;
 
@@ -216,6 +214,9 @@ router.post('/:id/reviews', async (req, res) => {
   }
 });
 
+// @route    POST api/product/update-product/:id
+// @desc     Update product by its ID
+// @access   Private
 router.post('/update-product/:id', auth, async (req, res) => {
   const { title, description, countInStock, price } = req.body;
 

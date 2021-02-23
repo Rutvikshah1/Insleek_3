@@ -1,7 +1,6 @@
 import React from 'react';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Link } from 'react-router-dom';
 import Navbar from '../../components/Navbar/Navbar';
 import {
   getFavouriteSuppliers,
@@ -39,9 +38,9 @@ const FavouriteSuppliers = ({ history }) => {
           {searchResult.loading ? (
             <Spinner />
           ) : (
-            searchResult.favouriteSuppliers.map((supplier) => (
-              <React.Fragment>
-                <div className="main-box" key={supplier._id}>
+            searchResult.favouriteSuppliers.map((supplier, index) => (
+              <React.Fragment key={index}>
+                <div className="main-box" key={index}>
                   <div
                     className="displaybox"
                     data-aos="fade-up"
@@ -56,21 +55,20 @@ const FavouriteSuppliers = ({ history }) => {
                       <b>{supplier.companyName}</b>
 
                       <div>
-                        <i class="fas fa-map-marker-alt"></i> {supplier.city},{' '}
-                        {supplier.state}
+                        <i className="fas fa-map-marker-alt"></i>{' '}
+                        {supplier.city}, {supplier.state}
                       </div>
                       <div className="">{supplier.niche}</div>
                     </div>
                     <div className="displaybox__part-two"></div>
-                    <Link
-                      to="#"
+                    <div
                       onClick={(e) => {
                         dispatch(removeFavouriteSuppliers(supplier._id));
                         e.stopPropagation();
                       }}
                     >
-                      <i class="fas fa-trash-alt"></i>
-                    </Link>
+                      <i className="fas fa-trash-alt"></i>
+                    </div>
                   </div>
                 </div>
               </React.Fragment>

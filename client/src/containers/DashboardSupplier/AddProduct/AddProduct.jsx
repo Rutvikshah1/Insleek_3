@@ -203,7 +203,7 @@ const AddProduct = () => {
 
         <button type="submit" className="__button __square">
           {loadingButton ? (
-            <i class="fa fa-spinner fa-spin"></i>
+            <i className="fa fa-spinner fa-spin"></i>
           ) : (
             'Add Product'
           )}

@@ -80,7 +80,7 @@ const SearchResult = () => {
           onChange={(e) => onChange(e)}
         />
         <i
-          class="fa fa-search"
+          className="fa fa-search"
           aria-hidden="true"
           disabled={search === ''}
           onClick={(e) => onSubmit(e)}

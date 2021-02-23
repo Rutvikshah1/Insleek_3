@@ -46,16 +46,10 @@ router.post('/user-message-read', async (req, res) => {
   const { supplier, user } = req.body;
 
   try {
-    let chat = await Chat.find({ user, supplier });
-
-    await chat[0].message.map((msg) => {
-      msg.userHasRead = true;
-    });
-
-    chat = await Chat.findOneAndUpdate(
-      { user, supplier },
-      { $set: chat[0] },
-      { new: true }
+    chat = await Chat.updateMany(
+      { user, supplier, 'message.userHasRead': false },
+      { $set: { 'message.$[elem].userHasRead': true } },
+      { arrayFilters: [{ 'elem.userHasRead': false }], multi: true }
     );
 
     res.status(201).json(chat);
@@ -71,16 +65,10 @@ router.post('/supplier-message-read', async (req, res) => {
   const { supplier, user } = req.body;
 
   try {
-    let chat = await Chat.find({ user, supplier });
-
-    await chat[0].message.map((msg) => {
-      msg.supplierHasRead = true;
-    });
-
-    chat = await Chat.findOneAndUpdate(
-      { user, supplier },
-      { $set: chat[0] },
-      { new: true }
+    chat = await Chat.updateMany(
+      { user, supplier, 'message.supplierHasRead': false },
+      { $set: { 'message.$[elem].supplierHasRead': true } },
+      { arrayFilters: [{ 'elem.supplierHasRead': false }], multi: true }
     );
 
     res.status(201).json(chat);

@@ -90,7 +90,7 @@ const Product = ({ match, history }) => {
 
                 <div className="search-product-box__review">
                   <strong className="search-product-box__star">
-                    {product.rating} <i class="fas fa-star"></i>
+                    {product.rating} <i className="fas fa-star"></i>
                   </strong>{' '}
                   ({numReviews} reviews)
                 </div>
@@ -199,12 +199,8 @@ const Product = ({ match, history }) => {
               <div>
                 {product.reviews !== undefined &&
                   product.reviews.length !== 0 &&
-                  product.reviews.map((review) => (
-                    <div
-                      key={review._id}
-                      className="review-card"
-                      data-aos="fade-up"
-                    >
+                  product.reviews.map((review, index) => (
+                    <div key={index} className="review-card" data-aos="fade-up">
                       <Rating value={review.rating} />
                       <p>{review.comment}</p>
                       <p>

@@ -1,12 +1,12 @@
 import React, { useEffect, Fragment, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { getProducts, viewProduct, clearProducts } from '../../actions/product';
-import { Link, useHistory } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import { openProfile, profileVisitCount } from '../../actions/searchResult';
 import './OpenProfile.scss';
 import Spinner from '../../components/Spinner/Spinner';
 import { sendMessage } from '../../actions/chat';
-import audioTone from './../../assests/message_tone.mp3';
+import audioTone from './../../assests/audio/message_tone.mp3';
 
 const OpenProfile = ({ match }) => {
   const dispatch = useDispatch();
@@ -58,7 +58,7 @@ const OpenProfile = ({ match }) => {
               <div className="adminstore__about-company">
                 <h1>{supplier.companyName}</h1>
                 <div>
-                  <i class="fas fa-map-marker-alt"></i> {supplier.city},{' '}
+                  <i className="fas fa-map-marker-alt"></i> {supplier.city},{' '}
                   {supplier.state}
                 </div>
                 <div>{supplier.aboutCompany}</div>
@@ -72,8 +72,8 @@ const OpenProfile = ({ match }) => {
               <div>
                 <h1 className="supplier-info">Contact Information</h1>
                 <div style={{ textTransform: 'lowercase' }}>
-                  <i class="fas fa-envelope"></i> {supplier.email} <br />
-                  <i class="fas fa-phone"></i> {supplier.phone}
+                  <i className="fas fa-envelope"></i> {supplier.email} <br />
+                  <i className="fas fa-phone"></i> {supplier.phone}
                 </div>
               </div>
               <br />
@@ -86,13 +86,14 @@ const OpenProfile = ({ match }) => {
                 <h2 className="product-nofound">No Products Found</h2>
               )}
 
-              {products.map((product) => {
+              {products.map((product, index) => {
                 return (
                   <div
+                    key={index}
                     className="search-product-box__product"
                     data-aos="fade-up"
                   >
-                    <Link
+                    <div
                       onClick={(e) => openProduct(product._id, history)}
                       className="search-product-box__link"
                     >
@@ -106,12 +107,12 @@ const OpenProfile = ({ match }) => {
                       </div>
                       <div className="search-product-box__review">
                         <strong className="search-product-box__star">
-                          {product.rating} <i class="fas fa-star"></i>
+                          {product.rating} <i className="fas fa-star"></i>
                         </strong>{' '}
                         ({product.numReviews} reviews)
                       </div>
                       <div>Rs. {product.price}</div>
-                    </Link>
+                    </div>
                   </div>
                 );
               })}

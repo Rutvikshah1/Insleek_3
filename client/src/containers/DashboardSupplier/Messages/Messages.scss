@@ -52,8 +52,8 @@
 .chat-sidebar {
   background: var(--dark-color-b);
   color: #fff;
-  height: 75vh;
-  padding: 20px 20px 60px;
+  height: 80vh;
+  padding: 20px 5px 60px;
   overflow: auto;
 
   &__user {
@@ -83,7 +83,7 @@
 
 .chat-messages {
   padding: 1rem;
-  height: 40rem;
+  height: 80vh;
   display: flex;
   flex-direction: column;
   overflow-y: auto;
@@ -230,16 +230,6 @@
   width: max-content;
 }
 
-@media (max-width: 700px) {
-  // .chat-main {
-  //   display: block;
-  // }
-
-  // .chat-sidebar {
-  //   display: none;
-  // }
-}
-
 .user-side-chat {
   padding-top: 4rem;
   margin: 0 10%;
@@ -250,6 +240,9 @@
 }
 
 @media screen and (max-width: 690px) {
+  .round-profile {
+    margin-right: 1.4rem;
+  }
   .chat-form-container {
     padding: 12px 8px;
   }
@@ -287,14 +280,14 @@
   }
 
   .chat-sidebar {
-    width: 35rem;
+    width: 34rem;
 
     h3 {
       text-align: center;
     }
 
     ul li {
-      padding: 10px 30px;
+      padding: 3px 15px;
     }
   }
 }

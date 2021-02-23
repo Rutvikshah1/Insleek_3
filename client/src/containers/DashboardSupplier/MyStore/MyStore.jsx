@@ -100,7 +100,7 @@ const MyStore = () => {
               <div className="adminstore__about-company">
                 <h1>{companyName}</h1>
                 <div>
-                  <i class="fas fa-map-marker-alt"></i> {city}, {state}
+                  <i className="fas fa-map-marker-alt"></i> {city}, {state}
                 </div>
                 <div>{aboutCompany}</div>
               </div>
@@ -112,19 +112,19 @@ const MyStore = () => {
 
               <div>
                 <h1>Contact</h1>
-                <i class="fas fa-envelope"></i>{' '}
+                <i className="fas fa-envelope"></i>{' '}
                 <span className="adminstore__email">{email}</span> <br />
-                <i class="fas fa-phone"></i> {phone}
+                <i className="fas fa-phone"></i> {phone}
               </div>
               <br />
             </div>
 
             {/* ..........................PRODUCTS.................. */}
             <div className="display-product-box__product">
-              {products.map((product) => {
+              {products.map((product, index) => {
                 const id = product._id;
                 return (
-                  <div className="store-product" data-aos="fade-up">
+                  <div className="store-product" data-aos="fade-up" key={index}>
                     <div key={id} className="store-product__content">
                       <input
                         type="text"
@@ -132,11 +132,11 @@ const MyStore = () => {
                         value={`http://localhost:3000/product/${product._id}`}
                       />
                       <Link to={`/product/${product._id}`} target="_blank">
-                        <i class="fas fa-eye"></i>
+                        <i className="fas fa-eye"></i>
                       </Link>
                       {document.queryCommandSupported('copy') && (
                         <Link to="/#" onClick={copyToClipboard}>
-                          <i class="far fa-copy"></i>
+                          <i className="far fa-copy"></i>
                         </Link>
                       )}
                       <img

@@ -13,11 +13,11 @@ const PlaceOrder = ({ history }) => {
     address,
     city,
     postalCode,
-    country,
+    state,
     custName,
     custPhone,
   } = cart.shippingAddress;
-  console.log(cart.shippingAddress);
+
   const dispatch = useDispatch();
 
   const supplier = cart.cartItems[0].supplier;
@@ -87,7 +87,7 @@ const PlaceOrder = ({ history }) => {
         <p>
           <strong>Delivery Address</strong>
           <br />
-          {address}, {city}, {postalCode}, {country}
+          {address}, {city}, {postalCode}, {state}
         </p>
         <hr />
         <br />

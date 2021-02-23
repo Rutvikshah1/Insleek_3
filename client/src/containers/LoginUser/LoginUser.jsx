@@ -104,7 +104,11 @@ const LoginUser = () => {
           </div>
 
           <button type="submit" className="__square __button">
-            {loadingButton ? <i class="fa fa-spinner fa-spin"></i> : 'LOGIN'}
+            {loadingButton ? (
+              <i className="fa fa-spinner fa-spin"></i>
+            ) : (
+              'LOGIN'
+            )}
           </button>
 
           <div>

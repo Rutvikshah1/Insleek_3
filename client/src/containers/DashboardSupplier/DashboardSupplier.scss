@@ -1,6 +1,10 @@
 .dashboard-supplier {
   display: flex;
 
+  a:active {
+    color: #551a8b;
+  }
+
   nav {
     width: 15vw;
     background-color: var(--color-light-grey);
@@ -52,7 +56,9 @@
         background-color: var(--color-blue);
         font-size: 2rem;
         margin-top: 2rem;
-
+        text-align: center;
+        border-top-left-radius: 100px;
+        border-bottom-right-radius: 100px;
         a {
           color: white;
         }

@@ -7,7 +7,33 @@ import Button from '../../components/Button/Button';
 import Spinner from '../../components/Spinner/Spinner';
 import './Order.scss';
 
-const Order = ({ match, history, location }) => {
+const Order = ({ match, history }) => {
+  // let currentPathname = null;
+  // let currentSearch = null;
+  // useEffect(() => {
+  //   history.listen((newLocation, action) => {
+  //     if (action === 'PUSH') {
+  //       if (
+  //         newLocation.pathname !== currentPathname ||
+  //         newLocation.search !== currentSearch
+  //       ) {
+  //         // Save new location
+  //         currentPathname = newLocation.pathname;
+  //         currentSearch = newLocation.search;
+
+  //         // Clone location object and push it to history
+  //         history.push({
+  //           pathname: newLocation.pathname,
+  //           search: newLocation.search,
+  //         });
+  //       }
+  //     } else {
+  //       // Send user back if they try to navigate back
+  //       history.go(1);
+  //     }
+  //   });
+  // }, []);
+
   const orderID = match.params.id;
   const dispatch = useDispatch();
 
@@ -46,7 +72,7 @@ const Order = ({ match, history, location }) => {
             <strong>Delivery Address</strong>
             <br />
             {shippingAddress.address}, {shippingAddress.city},{' '}
-            {shippingAddress.postalCode}, {shippingAddress.country}
+            {shippingAddress.postalCode}, {shippingAddress.state}
           </p>
           <br />
 

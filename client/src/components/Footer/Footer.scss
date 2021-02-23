@@ -5,6 +5,11 @@
   display: flex;
   justify-content: space-between;
 
+  a:visited,
+  a:link {
+    color: #551a8b;
+  }
+
   &__right {
     text-align: justify;
     width: 40rem;

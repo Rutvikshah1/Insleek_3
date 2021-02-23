@@ -1,13 +1,11 @@
 import React, { useEffect } from 'react';
 import Button from '../../components/Button/Button';
-import mainimg1 from '../../assests/images/mainimage1.jpg';
-import subimg1 from '../../assests/images/subimage1.jpg';
 import ImageWithText from '../../components/ImageWithText/ImageWithText';
 import ThreeFeatures from '../../components/ThreeFeatures/ThreeFeatures';
 import store from '../../assests/svg/029-open.svg';
 import money from '../../assests/svg/041-money.svg';
 import bag from '../../assests/svg/008-bag.svg';
-import deliveries from '../../assests/deliveries.svg';
+import deliveries from '../../assests/svg/deliveries.svg';
 import { Redirect } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { loadSupplier } from '../../actions/authSupplier';
@@ -67,7 +65,7 @@ const LandingSupplier = () => {
         <img src={deliveries} className="header__image" alt="Supplier" />
       </header>
 
-      <ImageWithText mainimage={mainimg1} subimage={subimg1} />
+      <ImageWithText />
 
       <ThreeFeatures data={threeFeatures} />
 

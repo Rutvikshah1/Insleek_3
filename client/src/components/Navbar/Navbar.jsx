@@ -27,7 +27,7 @@ const Navbar = () => {
       ) : authUser.isAuthenticated && authUser.user !== null ? (
         <>
           <div
-            class="menu-btn"
+            className="menu-btn"
             onClick={() => {
               toggleHamburger();
               if (showNavbar) {
@@ -37,14 +37,14 @@ const Navbar = () => {
               }
             }}
           >
-            <div class="menu-btn__burger"></div>
+            <div className="menu-btn__burger"></div>
           </div>
           {showNavbar && (
             <>
               <div className="navigation" data-aos="zoom-in-up">
                 <nav className="navigation__nav">
                   <ul className="navigation__list">
-                    <li className="navigation__item">
+                    <li className="navigation__item" data-aos="fade-up">
                       <Link
                         to="/sign-in"
                         className="navigation__item--username"

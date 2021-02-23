@@ -14,7 +14,7 @@ const SearchProductBox = ({ product }) => {
         <div className="search-product-box__title">{product.title}</div>
         <div className="search-product-box__review">
           <strong className="search-product-box__star">
-            {product.rating} <i class="fas fa-star"></i>
+            {product.rating} <i className="fas fa-star"></i>
           </strong>{' '}
           ({product.numReviews} reviews)
         </div>

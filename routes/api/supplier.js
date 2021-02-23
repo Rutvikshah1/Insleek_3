@@ -151,7 +151,6 @@ router.post(
 // @route    GET api/supplier
 // @desc     Get All Suppliers By City Name
 // @access   Public
-
 router.get('/state/:state', async (req, res) => {
   const state = req.params.state
     ? {
@@ -175,7 +174,6 @@ router.get('/state/:state', async (req, res) => {
 // @route    GET api/supplier
 // @desc     Get All Suppliers By Niche
 // @access   Public
-
 router.get('/niche/:niche', async (req, res) => {
   const niche = req.params.niche
     ? {
@@ -200,7 +198,6 @@ router.get('/niche/:niche', async (req, res) => {
 // @route    GET api/supplier
 // @desc     Get Supplier By ID
 // @access   Public
-
 router.get('/search/:id', async (req, res) => {
   try {
     const supplier = await Supplier.findById(req.params.id);
@@ -235,8 +232,6 @@ router.get('/count/:id', async (req, res) => {
 // @route    GET api/supplier
 // @desc     Get All Suppliers [Admin]
 // @access   Private
-// @todo     Add Auth For Admin
-
 router.get('/find-all/suppliers', async (req, res) => {
   try {
     const suppliers = await Supplier.find();
@@ -253,7 +248,6 @@ router.get('/find-all/suppliers', async (req, res) => {
 // @route    DELETE api/supplier
 // @desc     Delete Supplier By ID
 // @access   Private
-
 router.delete('/delete/:id', auth, async (req, res) => {
   try {
     const supplier = await Supplier.findById(req.params.id);
@@ -272,7 +266,6 @@ router.delete('/delete/:id', auth, async (req, res) => {
 // @route    POST api/supplier
 // @desc     Update Supplier By ID
 // @access   Private
-
 router.post('/update-profile/:id', auth, async (req, res) => {
   const {
     firstName,

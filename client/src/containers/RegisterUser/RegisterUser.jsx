@@ -170,7 +170,11 @@ const RegisterUser = () => {
           </div>
 
           <button type="submit" className="__square __button">
-            {loadingButton ? <i class="fa fa-spinner fa-spin"></i> : 'SIGN UP'}
+            {loadingButton ? (
+              <i className="fa fa-spinner fa-spin"></i>
+            ) : (
+              'SIGN UP'
+            )}
           </button>
 
           <div>

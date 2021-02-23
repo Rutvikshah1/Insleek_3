@@ -29,6 +29,7 @@ import { ToastContainer } from 'react-toastify';
 import PrivacyPolicy from '../Policies/PrivacyPolicy';
 import RefundPolicy from '../Policies/RefundPolicy';
 import TermsConditions from '../Policies/TermsConditions';
+import PageNotFound from '../PageNotFound/PageNotFound';
 
 // const ProductScreen = lazy(() => import('../../components/Product/Product'));
 
@@ -74,6 +75,8 @@ const Application = () => {
               component={RegisterSupplier}
             />
             <PrivateRoute path="/dashboard" component={DashboardSupplier} />
+
+            <Route component={PageNotFound} />
           </Switch>
           <Footer />
         </main>

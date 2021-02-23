@@ -117,8 +117,8 @@ const LandingUser = () => {
       ) : (
         ''
       )}
-      {arrOfSuppliers.map((supplier) => {
-        return <SearchResultBox supplier={supplier} key={supplier.id} />;
+      {arrOfSuppliers.map((supplier, index) => {
+        return <SearchResultBox supplier={supplier} key={index} />;
       })}
       {arrOfSuppliers.length >= 1 && showMore === false && (
         <button
@@ -132,8 +132,8 @@ const LandingUser = () => {
         </button>
       )}
       <div className="search-product-box">
-        {searchResult.products.map((product) => {
-          return <SearchProductBox product={product} key={product._id} />;
+        {searchResult.products.map((product, index) => {
+          return <SearchProductBox product={product} key={index} />;
         })}
       </div>
       <div style={{ margin: '4rem 0' }}>

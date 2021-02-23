@@ -1,5 +1,7 @@
 const express = require('express');
 const connectDB = require('./config/db');
+const http = require('http');
+const socketio = require('socket.io');
 const app = express();
 const dotenv = require('dotenv');
 const chalk = require('chalk');
@@ -33,6 +35,10 @@ if (process.env.NODE_ENV === 'production') {
     res.send('API is running....');
   });
 }
+
+//SOCKET Connection
+const server = http.createServer(app);
+const io = socketio(server);
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {

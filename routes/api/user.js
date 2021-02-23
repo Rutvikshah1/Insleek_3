@@ -77,7 +77,7 @@ router.post(
         }
       );
 
-      //sending mail confirmation
+      //Sending mail confirmation
       const mailOptions = {
         from: 'rutvikshah245@gmail.com',
         to: `${email}`,

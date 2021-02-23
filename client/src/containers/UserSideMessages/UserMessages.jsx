@@ -3,7 +3,7 @@ import moment from 'moment';
 import { useSelector, useDispatch } from 'react-redux';
 import { sendMessage, getUserChats, userReadMessage } from '../../actions/chat';
 import Navbar from '../../components/Navbar/Navbar';
-import audioTone from './../../assests/juntos-607.mp3';
+import audioTone from './../../assests/audio/juntos-607.mp3';
 import './UserMessages.scss';
 
 const UserMessages = () => {
@@ -84,19 +84,19 @@ const UserMessages = () => {
             <div className="chat-sidebar">
               <h3>Chats with suppliers</h3>
               <ul id="users">
-                {suppliers.map((supplier) => {
+                {suppliers.map((supplier, index) => {
                   const numOfUnread = supplier.message.filter(function (el) {
                     return el.userHasRead === false;
                   });
 
                   return (
                     <li
+                      key={index}
                       className={`chat-sidebar__user ${
                         Object.keys(singalChat).length !== 0 &&
                         singalChat.supplier._id === supplier.supplier._id &&
                         'back-change'
                       }`}
-                      key={supplier.supplier._id}
                       onClick={() => {
                         playSound();
                         getSingalChat(supplier.supplier._id);
@@ -138,10 +138,10 @@ const UserMessages = () => {
                 </p>
               )}
               {Object.keys(singalChat).length !== 0 &&
-                singalChat.message.map((msg) => {
+                singalChat.message.map((msg, index) => {
                   return (
                     <div
-                      key={msg._id}
+                      key={index}
                       className={`message ${
                         msg.side === 'user' ? 'message-you' : ''
                       }`}
@@ -177,7 +177,7 @@ const UserMessages = () => {
                 autoComplete="off"
               />
               <button className="btn">
-                <i class="fas fa-paper-plane"></i> Send
+                <i className="fas fa-paper-plane"></i> Send
               </button>
             </form>
           </div>
