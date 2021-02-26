@@ -62,7 +62,7 @@ const Messages = () => {
     div.scrollTop = div.scrollHeight;
     document.getElementById('msg').value = '';
   };
-  console.log(messages);
+
   const playSound = () => {
     let newAudio = new Audio(audioTone);
     newAudio.play();
