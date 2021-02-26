@@ -40,7 +40,7 @@
 }
 .store-product {
   width: 26rem;
-  height: 42rem;
+  height: 40rem;
   padding: 1rem;
   margin: 1rem;
   box-shadow: 0px 3px 15px rgba(#6c63ff, 0.7);
@@ -56,7 +56,7 @@
   }
 
   &--name {
-    height: 11rem;
+    height: 9rem;
   }
 
   &--buttons {
@@ -135,6 +135,10 @@
 }
 
 @media screen and (max-width: 690px) {
+  .store-product--name {
+    height: 7rem;
+  }
+
   .form-edit-product {
     margin: 2rem;
   }
@@ -157,6 +161,11 @@
 
   .store-product {
     width: 34rem;
+    height: 43rem;
+
+    img {
+      height: 20rem;
+    }
   }
 }
 

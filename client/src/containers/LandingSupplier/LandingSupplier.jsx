@@ -7,8 +7,7 @@ import money from '../../assests/svg/041-money.svg';
 import bag from '../../assests/svg/008-bag.svg';
 import deliveries from '../../assests/svg/deliveries.svg';
 import { Link, Redirect } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
-import { loadSupplier } from '../../actions/authSupplier';
+import { useSelector } from 'react-redux';
 import './LandingSupplier.scss';
 
 const LandingSupplier = () => {
@@ -34,10 +33,8 @@ const LandingSupplier = () => {
     { heading: 'Start earning in 3 simple steps' },
   ];
 
-  const dispatch = useDispatch();
   useEffect(() => {
     window.scrollTo(0, 0);
-    dispatch(loadSupplier());
   }, []);
 
   const isAuthenticated = useSelector(

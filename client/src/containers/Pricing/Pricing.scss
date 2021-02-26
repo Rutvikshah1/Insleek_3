@@ -25,9 +25,20 @@
 
   h1 {
     color: var(--color-blue);
+    margin-bottom: -2rem;
   }
 
+  h5 {
+    color: var(--color-grey);
+    span {
+      font-size: 4rem;
+      color: var(--color-blue);
+    }
+  }
   &__feature-list {
-    padding: 7rem 3rem;
+    padding: 6rem 3rem;
+    button {
+      margin: 0;
+    }
   }
 }

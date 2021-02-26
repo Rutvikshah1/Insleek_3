@@ -20,6 +20,8 @@ const Messages = () => {
 
   const [singalChat, setSingalChat] = useState({});
   const [messageText, setMessageText] = useState('');
+  const [messages, setMessages] = useState([]);
+
   const userHasRead = false;
   const supplierHasRead = true;
 
@@ -55,10 +57,12 @@ const Messages = () => {
         supplierHasRead
       )
     );
-
+    setMessages([...messages, messageText]);
+    const div = document.querySelector('.chat-messages');
+    div.scrollTop = div.scrollHeight;
     document.getElementById('msg').value = '';
   };
-
+  console.log(messages);
   const playSound = () => {
     let newAudio = new Audio(audioTone);
     newAudio.play();
@@ -149,6 +153,15 @@ const Messages = () => {
                   </div>
                 );
               })}
+            {messages.map((msg, index) => (
+              <div className="message message-you" key={index}>
+                <p className="meta">
+                  You <span> {moment(new Date()).format('D MMM, h:mm a')}</span>
+                </p>
+
+                <p className="text">{msg} </p>
+              </div>
+            ))}
           </div>
         </main>
         <div className="chat-form-container">

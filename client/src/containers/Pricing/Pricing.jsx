@@ -25,6 +25,9 @@ const Pricing = () => {
               <li>
                 <i className="fas fa-check-circle"></i> Premium support
               </li>
+              <h5>
+                <span>₹ 499</span> p/m
+              </h5>
               <button className="__button __square">Subscribe now</button>
             </ul>
           </div>

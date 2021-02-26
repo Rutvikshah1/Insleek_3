@@ -4,8 +4,10 @@ import { useSelector, useDispatch } from 'react-redux';
 import { sendMessage, getUserChats, userReadMessage } from '../../actions/chat';
 import Navbar from '../../components/Navbar/Navbar';
 import audioTone from './../../assests/audio/juntos-607.mp3';
+// import io from 'socket.io-client';
 import './UserMessages.scss';
 
+// let socket;
 const UserMessages = () => {
   const dispatch = useDispatch();
 
@@ -17,9 +19,32 @@ const UserMessages = () => {
 
   const [singalChat, setSingalChat] = useState({});
   const [messageText, setMessageText] = useState('');
+  const [messages, setMessages] = useState([]);
 
   const userHasRead = true;
   const supplierHasRead = false;
+
+  // const ENDPOINT = 'http://localhost:5000';
+
+  //Socket Connection
+  // useEffect(() => {
+  //   socket = io(ENDPOINT, {
+  //     transports: ['websocket', 'polling', 'flashsocket'],
+  //   });
+  //   socket.emit('join', {}, () => {});
+  //   return () => {
+  //     socket.emit('disconnect');
+  //     socket.off();
+  //   };
+  // }, [ENDPOINT]);
+
+  //Socket message
+  // const [messages, setMessages] = useState([]);
+  // useEffect(() => {
+  //   socket.on('message', (message) => {
+  //     setMessages([...messages, message]);
+  //   });
+  // }, [messages]);
 
   useEffect(() => {
     dispatch(getUserChats(id));
@@ -50,6 +75,9 @@ const UserMessages = () => {
         supplierHasRead
       )
     );
+    setMessages([...messages, messageText]);
+    const div = document.querySelector('.chat-messages');
+    div.scrollTop = div.scrollHeight;
     document.getElementById('msg').value = '';
   };
 
@@ -137,6 +165,7 @@ const UserMessages = () => {
                   Please select any chat to start sending messages
                 </p>
               )}
+
               {Object.keys(singalChat).length !== 0 &&
                 singalChat.message.map((msg, index) => {
                   return (
@@ -160,6 +189,17 @@ const UserMessages = () => {
                     </div>
                   );
                 })}
+
+              {messages.map((msg, index) => (
+                <div className="message message-you" key={index}>
+                  <p className="meta">
+                    You{' '}
+                    <span> {moment(new Date()).format('D MMM, h:mm a')}</span>
+                  </p>
+
+                  <p className="text">{msg} </p>
+                </div>
+              ))}
             </div>
           </main>
           <div className="chat-form-container">

@@ -1,7 +1,7 @@
 const express = require('express');
 const connectDB = require('./config/db');
 const http = require('http');
-const socketio = require('socket.io');
+// const socketio = require('socket.io');
 const app = express();
 const dotenv = require('dotenv');
 const chalk = require('chalk');
@@ -37,8 +37,23 @@ if (process.env.NODE_ENV === 'production') {
 }
 
 //SOCKET Connection
-const server = http.createServer(app);
-const io = socketio(server);
+// const server = http.createServer(app);
+// const io = socketio(server);
+
+// io.on('connection', (socket) => {
+//   // console.log('we have a new conncetion');
+//   socket.on('join', ({}, callback) => {
+//     socket.emit('message', { text: 'Heelo how are you ?' });
+//   });
+
+//   socket.on('disconnect', () => {
+//     console.log('user has left');
+//   });
+
+//   socket.on('sendMessage', (message) => {
+//     socket.emit('message', { text: message });
+//   });
+// });
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {

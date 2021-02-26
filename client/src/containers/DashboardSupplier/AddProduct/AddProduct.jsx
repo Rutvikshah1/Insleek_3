@@ -28,7 +28,6 @@ const AddProduct = () => {
 
   const uploadFileHandler = async (e) => {
     const receivedFile = e.target.files[0];
-    console.log(receivedFile);
 
     if (receivedFile.name.indexOf(' ') !== -1) {
       const ele = document.getElementById('img-space-error');

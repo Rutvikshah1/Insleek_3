@@ -114,6 +114,9 @@
     }
   }
   .search-product-box {
+    &__title {
+      margin: 0;
+    }
     &__product {
       width: 100%;
       margin: 1.3rem;

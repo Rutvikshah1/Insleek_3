@@ -9,7 +9,7 @@ import {
 } from '../../../actions/product';
 import './MyStore.scss';
 import { Link } from 'react-router-dom';
-import { toastSuccessful } from '../../../utils/Toast';
+// import { toastSuccessful } from '../../../utils/Toast';
 
 const MyStore = () => {
   const dispatch = useDispatch();
@@ -76,13 +76,13 @@ const MyStore = () => {
     dispatch(deleteProduct(id));
   };
 
-  function copyToClipboard(e) {
-    e.preventDefault();
-    const copyText = document.getElementById('copy-input');
-    copyText.select();
-    document.execCommand('copy');
-    toastSuccessful('Copied to clipboard');
-  }
+  // function copyToClipboard(e) {
+  //   e.preventDefault();
+  //   const copyText = document.getElementById('copy-input');
+  //   copyText.select();
+  //   document.execCommand('copy');
+  //   toastSuccessful('Copied to clipboard');
+  // }
 
   return (
     <Fragment>
@@ -126,19 +126,19 @@ const MyStore = () => {
                 return (
                   <div className="store-product" data-aos="fade-up" key={index}>
                     <div key={id} className="store-product__content">
-                      <input
+                      {/* <input
                         type="text"
                         id="copy-input"
                         value={`http://localhost:3000/product/${product._id}`}
-                      />
+                      /> */}
                       <Link to={`/product/${product._id}`} target="_blank">
                         <i className="fas fa-eye"></i>
                       </Link>
-                      {document.queryCommandSupported('copy') && (
-                        <Link to="/#" onClick={copyToClipboard}>
+                      {/* {document.queryCommandSupported('copy') && (
+                        <div onClick={copyToClipboard}>
                           <i className="far fa-copy"></i>
-                        </Link>
-                      )}
+                        </div>
+                      )} */}
                       <img
                         className="store-product--image"
                         src={`/uploads/${product.image}`}
