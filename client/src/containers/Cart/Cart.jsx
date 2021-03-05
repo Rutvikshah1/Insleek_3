@@ -76,29 +76,9 @@ const Cart = ({ match, history, location }) => {
                   Remove Product
                 </div>
                 <form>
-                  <label htmlFor="quantity">Select Qty</label>
-                  <br />
-                  <select
-                    className="userside-product__dropdown"
-                    name="quantity"
-                    id="quantity"
-                    value={item.qty}
-                    onChange={(e) => {
-                      dispatch(addToCart(item.product, Number(e.target.value)));
-                    }}
-                  >
-                    {item.countInStock < 10
-                      ? [...Array(item.countInStock).keys()].map((x) => (
-                          <option key={x + 1} value={x + 1}>
-                            {x + 1}
-                          </option>
-                        ))
-                      : [...Array(10).keys()].map((x) => (
-                          <option key={x + 1} value={x + 1}>
-                            {x + 1}
-                          </option>
-                        ))}
-                  </select>
+                  <p>
+                    Qty : <b>{item.qty}</b>
+                  </p>
                 </form>
                 <br />
               </div>,

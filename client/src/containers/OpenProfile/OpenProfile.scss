@@ -8,11 +8,6 @@
     width: 24%;
     text-align: justify;
   }
-
-  &__image {
-    height: 14rem;
-    width: 19.5rem;
-  }
 }
 
 .store-product-wrapper {
@@ -69,6 +64,9 @@
 }
 
 .search-product-box {
+  &__product {
+    cursor: pointer;
+  }
   &__review {
     padding: 1rem 0;
   }
@@ -108,7 +106,7 @@
       width: 95%;
     }
 
-    &__image {
+    &__store-image {
       width: 100%;
       height: 20rem;
     }

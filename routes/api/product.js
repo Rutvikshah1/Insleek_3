@@ -25,7 +25,7 @@ router.post(
       return res.status(400).json({ errors: errors.array() });
     }
 
-    const { title, description, price, image, countInStock } = req.body;
+    const { title, description, price, image, requiredQty } = req.body;
 
     try {
       const product = new Product({
@@ -33,7 +33,7 @@ router.post(
         description,
         price,
         image,
-        countInStock,
+        requiredQty,
         supplier: req.supplier.id,
       });
       await product.save();
@@ -218,7 +218,7 @@ router.post('/:id/reviews', async (req, res) => {
 // @desc     Update product by its ID
 // @access   Private
 router.post('/update-product/:id', auth, async (req, res) => {
-  const { title, description, countInStock, price } = req.body;
+  const { title, description, requiredQty, price } = req.body;
 
   try {
     let product = await Product.findById(req.params.id);
@@ -226,7 +226,7 @@ router.post('/update-product/:id', auth, async (req, res) => {
     if (title) product.title = title;
     if (description) product.description = description;
     if (price) product.price = price;
-    if (countInStock) product.countInStock = countInStock;
+    if (requiredQty) product.requiredQty = requiredQty;
 
     product = await Product.findOneAndUpdate(
       { _id: req.params.id },

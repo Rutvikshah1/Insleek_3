@@ -16,7 +16,7 @@ const AddProduct = () => {
     title: '',
     description: '',
     price: '',
-    countInStock: 5,
+    requiredQty: 5,
   });
 
   const [image, setImage] = useState('');
@@ -67,7 +67,7 @@ const AddProduct = () => {
     }
   };
 
-  const { title, description, price, countInStock } = formData;
+  const { title, description, price, requiredQty } = formData;
   const [loadingButton, setLoadingButton] = useState(false);
 
   const onChange = (e) =>
@@ -136,19 +136,19 @@ const AddProduct = () => {
         </div>
 
         <div className="form-group">
-          <h4 className="form-group__title">Enter Number Of Units</h4>
+          <h4 className="form-group__title">Enter required minimum quantity</h4>
           <input
             className="form-group__text"
-            placeholder="Enter Number Of Units"
+            placeholder="Enter required minimum quantity"
             error="required"
             type="number"
             min="1"
-            name="countInStock"
-            value={countInStock}
+            name="requiredQty"
+            value={requiredQty}
             onChange={(e) => onChange(e)}
           />
           <br />
-          {!countInStock && (
+          {!requiredQty && (
             <small className="form-group__error">Required Field</small>
           )}
         </div>

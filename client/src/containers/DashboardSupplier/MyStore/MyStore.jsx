@@ -22,7 +22,7 @@ const MyStore = () => {
   const [formData, setFormData] = useState({
     title: '',
     description: '',
-    countInStock: '',
+    requiredQty: '',
     price: '',
   });
 
@@ -34,11 +34,11 @@ const MyStore = () => {
       title: !product.title ? '' : product.title,
       price: !product.price ? '' : product.price,
       description: !product.description ? '' : product.description,
-      countInStock: !product.countInStock ? '' : product.countInStock,
+      requiredQty: !product.requiredQty ? '' : product.requiredQty,
     });
   }, [productId, product]);
 
-  const { title, description, countInStock, price } = formData;
+  const { title, description, requiredQty, price } = formData;
 
   const onChange = (e) =>
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -94,7 +94,7 @@ const MyStore = () => {
             <div className="adminstore">
               <img
                 src={`/uploads/${companyImage}`}
-                className="adminstore__image"
+                className="adminstore__store-image"
                 alt=""
               />
               <div className="adminstore__about-company">
@@ -149,8 +149,8 @@ const MyStore = () => {
                       <h1 className="store-product--price">
                         Rs. {product.price}
                       </h1>
-                      <div className="store-product--countInStock">
-                        {product.countInStock} units available
+                      <div className="store-product--requiredQty">
+                        Minimum {product.requiredQty} units required
                       </div>
 
                       <div className="store-product--buttons">
@@ -230,18 +230,20 @@ const MyStore = () => {
                         </div>
 
                         <div className="form-group">
-                          <h4 className="form-group__title">Count In Stock</h4>
+                          <h4 className="form-group__title">
+                            Min required quantity
+                          </h4>
                           <input
                             className="form-group__text"
                             error="required"
-                            name="countInStock"
+                            name="requiredQty"
                             type="text"
                             min="1"
-                            value={countInStock}
+                            value={requiredQty}
                             onChange={(e) => onChange(e)}
                           />
                           <small className="form-group__error">
-                            {!countInStock && 'Required'}
+                            {!requiredQty && 'Required'}
                           </small>
                         </div>
 

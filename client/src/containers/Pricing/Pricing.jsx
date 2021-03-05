@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './Pricing.scss';
 
 const Pricing = () => {
@@ -26,9 +27,11 @@ const Pricing = () => {
                 <i className="fas fa-check-circle"></i> Premium support
               </li>
               <h5>
-                <span>₹ 499</span> p/m
+                <span>₹499</span> p/m
               </h5>
-              <button className="__button __square">Subscribe now</button>
+              <Link to="/supplier-register" className="__button __square">
+                Subscribe now
+              </Link>
             </ul>
           </div>
         </div>

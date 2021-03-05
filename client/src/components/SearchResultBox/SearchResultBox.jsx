@@ -28,11 +28,9 @@ const SearchResultBox = (props) => {
           data-aos="fade-up"
           onClick={() => dispatch(openProfile(props.supplier._id, history))}
         >
-          <img
-            src={`/uploads/${props.supplier.companyImage}`}
-            className="displaybox__image"
-            alt=""
-          />
+          <div className="displaybox__image">
+            <img src={`/uploads/${props.supplier.companyImage}`} alt="" />
+          </div>
           <div className="displaybox__part-one">
             <div>
               <b>{props.supplier.companyName}</b>

@@ -52,7 +52,7 @@ const OpenProfile = ({ match }) => {
             <div className="adminstore">
               <img
                 src={`/uploads/${supplier.companyImage}`}
-                className="adminstore__image"
+                className="adminstore__store-image"
                 alt=""
               />
               <div className="adminstore__about-company">

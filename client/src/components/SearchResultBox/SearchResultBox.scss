@@ -23,7 +23,12 @@
 
   &__image {
     height: 17rem;
-    width: 19rem;
+    width: 24rem;
+
+    img {
+      height: 100%;
+      width: 100%;
+    }
   }
 }
 

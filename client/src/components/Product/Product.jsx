@@ -36,21 +36,21 @@ const Product = ({ match, history }) => {
     window.scrollTo(0, 0);
   }, [dispatch, match, successProductReview]);
 
-  const [qty, setQty] = useState(1);
-  const [rating, setRating] = useState(0);
-  const [comment, setComment] = useState('');
-  const [cartAlert, setCartAlert] = useState(false);
-
   const {
     title,
     description,
     price,
-    countInStock,
+    requiredQty,
     numReviews,
     image,
     // eslint-disable-next-line
     product: productInfo,
   } = product;
+
+  const [qty, setQty] = useState(null);
+  const [rating, setRating] = useState(0);
+  const [comment, setComment] = useState('');
+  const [cartAlert, setCartAlert] = useState(false);
 
   const submitHandler = (e) => {
     e.preventDefault();
@@ -94,42 +94,33 @@ const Product = ({ match, history }) => {
                   </strong>{' '}
                   ({numReviews} reviews)
                 </div>
-
-                <div>
-                  {countInStock > 0
-                    ? `In Stock ${countInStock} units available`
-                    : 'Out Of Stock'}
-                </div>
-
+                <p style={{ color: '#6c63ff' }}>
+                  Minimum {requiredQty} units required
+                </p>
                 <form>
-                  <label htmlFor="quantity">Select Qty</label>
+                  <label htmlFor="quantity">Enter the quantity</label>
                   <br />
-                  <select
-                    className="form-group__dropdown"
-                    name="quantity"
-                    id="quantity"
+                  <input
+                    className="form-group__text"
+                    type="number"
                     value={qty}
+                    id="quantity"
+                    name="quantity"
                     onChange={(e) => {
                       setQty(e.target.value);
                     }}
-                  >
-                    {countInStock < 10
-                      ? [...Array(countInStock).keys()].map((x) => (
-                          <option key={x + 1} value={x + 1}>
-                            {x + 1}
-                          </option>
-                        ))
-                      : [...Array(10).keys()].map((x) => (
-                          <option key={x + 1} value={x + 1}>
-                            {x + 1}
-                          </option>
-                        ))}
-                  </select>
+                  />
+                  <br />
+                  <small className="form-group__error">
+                    {requiredQty > qty && qty !== null
+                      ? `Please order more than ${requiredQty} units`
+                      : ''}
+                  </small>
                 </form>
 
                 <div>
                   <button
-                    disabled={countInStock === 0}
+                    disabled={requiredQty > qty || qty === null}
                     className="__button __square"
                     onClick={() => {
                       if (

@@ -10,7 +10,7 @@ const Copyright = () => {
         fontSize: '1rem',
       }}
     >
-      Insleek Private Limited Copyrights 2021
+      Insleek.com All Rights Reserved 2021
     </div>
   );
 };
